@@ -1,3 +1,5 @@
+import AuthCheck from "@/components/AuthCheck";
+import { SignInButton, SignOutButton } from "@/components/buttons";
 import Link from "next/link";
 
 export default function NavMenu() {
@@ -16,6 +18,14 @@ export default function NavMenu() {
                 <li>
                     <Link href={"/users"}>Users</Link>
                 </li>
+                <li>
+                    <SignInButton />
+                </li>
+                <AuthCheck>
+                    <li>
+                        <SignOutButton />
+                    </li>
+                </AuthCheck>
             </ul>
         </nav>
     );
