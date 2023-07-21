@@ -8,7 +8,7 @@ export function SignInButton() {
     const { data: session, status } = useSession();
 
     if (status === "loading") {
-        return <>...</>;
+        return <article aria-busy="true"></article>;
     }
 
     if (status === "authenticated") {
