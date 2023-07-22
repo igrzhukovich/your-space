@@ -1,5 +1,7 @@
 import AuthCheck from "@/components/AuthCheck";
-import { SignInButton, SignOutButton } from "@/components/buttons";
+import { SignInButton, SignOutButton } from "@/components/Buttons";
+import { DisplayCounterReact } from "@/components/CounterReact";
+import { DisplayCounterRedux } from "@/components/CounterRedux";
 import Link from "next/link";
 
 export default function NavMenu() {
@@ -24,6 +26,12 @@ export default function NavMenu() {
                 <AuthCheck>
                     <li>
                         <SignOutButton />
+                    </li>
+                    <li>
+                        <DisplayCounterReact />
+                    </li>
+                    <li>
+                        <DisplayCounterRedux />
                     </li>
                 </AuthCheck>
             </ul>

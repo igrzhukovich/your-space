@@ -16,7 +16,7 @@ const reducer = (state, action) => {
     }
 };
 
-const CounterProvider = ({ children }) => {
+export const CounterProvider = ({ children }) => {
     const [state, dispatch] = useReducer(reducer, initialState);
 
     return (
@@ -26,10 +26,10 @@ const CounterProvider = ({ children }) => {
     );
 };
 
-const CounterDisplay = () => {
+export const DisplayCounterReact = () => {
     const { state } = useContext(CounterContext);
 
-    return <p>Count: {state.count}</p>;
+    return <p>React Count: {state.count}</p>;
 };
 
 const CounterButtons = () => {
@@ -47,11 +47,12 @@ const CounterButtons = () => {
     );
 };
 
-export default function Counter() {
+export default function CounterReact() {
     return (
-        <CounterProvider>
-            <CounterDisplay />
+        <div>
+            <h2>Counter with help of React</h2>
+            <DisplayCounterReact />
             <CounterButtons />
-        </CounterProvider>
+        </div>
     );
 }

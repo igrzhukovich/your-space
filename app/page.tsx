@@ -1,12 +1,14 @@
 import AuthCheck from "@/components/AuthCheck";
-import Counter from "@/components/counter";
+import CounterReact from "@/components/CounterReact";
+import CounterRedux from "@/components/CounterRedux";
 
 export default function Home() {
     return (
         <div>
             <h2>Hello!</h2>
             <AuthCheck>
-                <Counter />
+                <CounterReact />
+                <CounterRedux />
             </AuthCheck>
         </div>
     );
