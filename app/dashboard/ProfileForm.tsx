@@ -4,10 +4,6 @@ async function UpdateUser(e: React.FormEvent<HTMLFormElement>) {
     e.preventDefault();
 
     const formData = new FormData(e.currentTarget);
-    console.log({
-        formData,
-    });
-
     const body = {
         name: formData.get("name"),
         email: formData.get("email"),
@@ -44,7 +40,7 @@ export default function ProfileForm({ user }: any) {
                 defaultValue={user?.email}
                 required
             />
-            <small>We'll never share your email with anyone else.</small>
+            <small>We&apos;ll never share your email with anyone else.</small>
 
             <button type="submit">Submit</button>
         </form>

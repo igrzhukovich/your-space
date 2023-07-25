@@ -1,3 +1,4 @@
+import FollowButton from "@/components/FollowButton/FollowButton";
 import UserCard from "@/components/UserCard";
 import { prisma } from "@/lib/prisma";
 
@@ -12,5 +13,10 @@ export default async function UserPage({ params }: Props) {
         where: { id: params.id },
     });
 
-    return <UserCard {...user} />;
+    return (
+        <div>
+            <UserCard {...user} />
+            <FollowButton targetUserId={params.id} />
+        </div>
+    );
 }

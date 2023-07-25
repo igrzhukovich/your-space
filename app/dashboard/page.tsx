@@ -1,4 +1,3 @@
-import UserCard from "@/components/UserCard";
 import { prisma } from "@/lib/prisma";
 import { getServerSession } from "next-auth";
 import { authOptions } from "../api/auth/[...nextauth]/route";
@@ -10,10 +9,6 @@ export default async function Dashboard() {
     if (!session) {
         redirect("/api/auth/signin");
     }
-
-    console.log({
-        session,
-    });
 
     const email = session.user?.email!;
     const user = await prisma.user.findUniqueOrThrow({ where: { email } });
